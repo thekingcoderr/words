@@ -359,5 +359,14 @@ namespace words
                 }
             }
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            for(int i = 0;i < chars.Length;i++)
+            {
+                combine = Convert.ToString(chars[i]);
+                combine = combine + combine;
+            }
+        }
     }
 }
