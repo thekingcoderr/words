@@ -368,5 +368,42 @@ namespace words
                 combine = combine + combine;
             }
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            char[] s = new char[4];
+            for (int i = 0; i < 4; i++)
+            {
+                int letter = rnd.Next(0, 20);
+                string letters = "BCDFGHGKLMNPQRSTVWXYZ";
+                s[i] = letters[letter];
+            }
+            button1.Text = Convert.ToString(s[0]);
+            button2.Text = Convert.ToString(s[1]);
+            button3.Text = Convert.ToString(s[2]);
+            button4.Text = Convert.ToString(s[3]);
+
+            char[] vowel = new char[2];
+            for (int i = 0; i < 2; i++)
+            {
+                string v = "AEIOU";
+                int vowels = rnd.Next(0, 4);
+                vowel[i] = v[vowels];
+            }
+            button5.Text = Convert.ToString(vowel[0]);
+            button6.Text = Convert.ToString(vowel[1]);
+
+            button7.Text = "";
+            button8.Text = "";
+            button9.Text = "";
+            button10.Text = "";
+            button11.Text = "";
+            button12.Text = "";
+            button13.Text = "";
+
+
+
+        }
     }
 }
