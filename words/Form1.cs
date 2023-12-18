@@ -50,7 +50,7 @@ namespace words
             for (int i = 0; i < 4; i++)
             {
                 int letter = rnd.Next(0, 20);
-                string letters = "BCDFGHGKLMNPQRSTVWXYZ";
+                string letters = "bcdfghgklmnpqrstvwxyz";
                 s[i] = letters[letter];
             }
             button1.Text = Convert.ToString(s[0]);
@@ -61,7 +61,7 @@ namespace words
             char[] vowel = new char[2];
             for (int i = 0; i < 2; i++)
             {
-                string v = "AEIOU";
+                string v = "aeiou";
                 int vowels = rnd.Next(0, 4);
                 vowel[i] = v[vowels];
             }
@@ -83,7 +83,7 @@ namespace words
 
 
         }
-        static void randomletters()
+        static void reset()
         {
 
 
@@ -129,12 +129,11 @@ namespace words
             }
             chars[top] = Convert.ToChar(button1.Text);
             top = top + 1;
-            if (top == 6)
-            {
-                combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
-                button13.Text = combine;
-                score(combine, words);
-            }
+            
+            combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
+            button13.Text = combine;
+            //score(combine, words);
+            
             
 
 
@@ -170,12 +169,11 @@ namespace words
             }
             chars[top] = Convert.ToChar(button2.Text);
             top = top + 1;
-            if (top == 6)
-            {
-                combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
-                button13.Text = combine;
-                score(combine, words);
-            }
+            
+            combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
+            button13.Text = combine;
+            //score(combine, words);
+            
             
 
 
@@ -209,12 +207,11 @@ namespace words
             }
             chars[top] = Convert.ToChar(button3.Text);
             top = top + 1;
-            if (top == 6)
-            {
-                combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
-                button13.Text = combine;
-                score(combine, words);
-            }
+            
+            combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
+            button13.Text = combine;
+            //score(combine, words);
+            
             
 
 
@@ -250,12 +247,11 @@ namespace words
             }
             chars[top] = Convert.ToChar(button4.Text);
             top = top + 1;
-            if (top == 6)
-            {
-                combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
+           
+            combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
                 button13.Text = combine;
-                score(combine, words);
-            }
+            //score(combine, words);
+            
             
 
 
@@ -292,11 +288,10 @@ namespace words
             }
             chars[top] = Convert.ToChar(button5.Text);
             top = top + 1;
-            if (top == 6)
-            {
-                combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
-                button13.Text = combine;
-            }
+            
+            combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
+            button13.Text = combine;
+            
             
 
 
@@ -332,12 +327,11 @@ namespace words
             }
             chars[top] = Convert.ToChar(button6.Text);
             top = top + 1;
-            if (top == 6)
-            {
-                combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
-                button13.Text = combine;
-                score(combine, words);
-            }
+            
+            combine = Convert.ToString(chars[0]) + Convert.ToString(chars[1]) + Convert.ToString(chars[2]) + Convert.ToString(chars[3]) + Convert.ToString(chars[4]) + Convert.ToString(chars[5]);
+            button13.Text = combine;
+            //score(combine, words);
+           
             
 
 
@@ -362,21 +356,33 @@ namespace words
 
         private void button14_Click(object sender, EventArgs e)
         {
-            for(int i = 0;i < chars.Length;i++)
+
+            MessageBox.Show(combine);
+            for (int v = 0; v < words.Count; v++)
             {
-                combine = Convert.ToString(chars[i]);
-                combine = combine + combine;
+                if (combine == words[v])
+                {
+                    MessageBox.Show("correct");
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("wrong");
+                    break;
+                }
+                      
             }
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
+
             Random rnd = new Random();
             char[] s = new char[4];
             for (int i = 0; i < 4; i++)
             {
                 int letter = rnd.Next(0, 20);
-                string letters = "BCDFGHGKLMNPQRSTVWXYZ";
+                string letters = "bcdfghgklmnpqrstvwxyz";
                 s[i] = letters[letter];
             }
             button1.Text = Convert.ToString(s[0]);
@@ -387,7 +393,7 @@ namespace words
             char[] vowel = new char[2];
             for (int i = 0; i < 2; i++)
             {
-                string v = "AEIOU";
+                string v = "aeiou";
                 int vowels = rnd.Next(0, 4);
                 vowel[i] = v[vowels];
             }
@@ -401,6 +407,8 @@ namespace words
             button11.Text = "";
             button12.Text = "";
             button13.Text = "";
+            top = 0;
+            combine = "";
 
 
 
