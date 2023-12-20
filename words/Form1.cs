@@ -15,12 +15,14 @@ namespace words
     public partial class Form1 : Form
     {
         List<string> words = new List<string>();
-        
+
+        int counttrue = 0;
         
         string combine = "";
         char[] chars = new char[8];
         int top = 0;
         string s = "";
+        bool check = false;
         public Form1()
         {
             InitializeComponent();
@@ -360,17 +362,22 @@ namespace words
             MessageBox.Show(combine);
             for (int v = 0; v < words.Count; v++)
             {
+                
                 if (combine == words[v])
                 {
-                    MessageBox.Show("correct");
-                    break;
+                    counttrue++;
+                   
                 }
-                else
-                {
-                    MessageBox.Show("wrong");
-                    break;
-                }
+                
                       
+            }
+            if (counttrue == 1)
+            {
+                MessageBox.Show("correct");
+            }
+            else
+            {
+                MessageBox.Show("wrong");
             }
         }
 
