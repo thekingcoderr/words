@@ -409,6 +409,10 @@ namespace words
             button13.Text = "";
             top = 0;
             combine = "";
+            for(int i = 0; i< chars.Length;i++)
+            {
+                chars[i] = Convert.ToChar('.');
+            }
 
 
 
